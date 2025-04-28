@@ -72,4 +72,4 @@ pnpm install -P
 
 ## 原作者信息
 原插件：[@ningmengchongshui](https://gitee.com/ningmengchongshui)  
-原作者：[@DDZS](https://gitee.com/hutao222)
+原作者：[@DDZS](https://gitee.com/hutao222)[@屑洛](https://gitee.com/xialuo03)
