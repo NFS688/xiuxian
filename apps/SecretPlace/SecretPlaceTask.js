@@ -25,7 +25,8 @@ const require = createRequire(import.meta.url)
 var mysql = require('mysql');
 let databaseConfigData = config.getConfig("database", "database");
 const db = mysql.createPool({
-  host: 'localhost',
+  host: databaseConfigData.Database.host,
+  port: databaseConfigData.Database.port,
   user: databaseConfigData.Database.username,
   password: databaseConfigData.Database.password,
   database: 'xiuxiandatabase'
