@@ -1,0 +1,133 @@
+- group: 异界世界
+  list:
+    - icon: help-icon_59
+      title: '#造访异界'
+      desc: '前往异界'
+    - icon: help-icon_59
+      title: '#异界攻略'
+      desc: '查询异界攻略'
+    - icon: help-icon_1
+      title: '#我的面板'
+      desc: '查看异界面板'
+    - icon: help-icon_1
+      title: '#我的背包'
+      desc: '查看异界背包'
+    - icon: help-icon_2
+      title: '#我的异界战力'
+      desc: '查询异界战力'
+    - icon: help-icon_3
+      title: '#异界改名xxx'
+      desc: '更改异界名号，一天只能更改一次，更改需消耗100星魂币'
+    - icon: help-icon_2
+      title: '#异界装备'
+      desc: '装备'
+    - icon: help-icon_2
+      title: '#背包(锁定|解锁)+类型+物品名'
+      desc: '解锁或锁定某个物品不一键出售'
+    - icon: help-icon_1
+      title: '#异界合成xxx'
+      desc: '合成物品'
+    - icon: help-icon_79
+      title: '#查询异界合成列表'
+      desc: '查询异界合成列表'
+    - icon: help-icon_79
+      title: '#查询异界合成列表+类别'
+      desc: '筛选异界合成列表'
+    - icon: help-icon_14
+      title: '#查询异界装备套装'
+      desc: '查询异界全部套装装备效果'
+    - icon: help-icon_14
+      title: '#异界出售+物品名*个数'
+      desc: '出售物品'
+    - icon: help-icon_14
+      title: '#异界一键出售+物品类型'
+      desc: '一键出售物品'
+    - icon: help-icon_14
+      title: '#刷怪xxx分钟'
+      desc: '挂机刷怪领代币'
+    - icon: help-icon_14
+      title: '#结束刷怪'
+      desc: '提前结束领福利'
+    - icon: help-icon_14
+      title: '#跑路'
+      desc: '怪打不过跑得过'
+
+- group: 异界秘境|寻宝
+  list:
+    - icon: help-icon_14
+      title: '#异界秘境'
+      desc: '查询全部异界的秘境'
+    - icon: help-icon_14
+      title: '#探寻异界秘境+秘境名'
+      desc: '前往秘境获得装备、遗书等'
+    - icon: help-icon_79
+      title: '#异界寻宝+地图名'
+      desc: '搜寻宝藏'
+    - icon: help-icon_79
+      title: '#食用'
+      desc: '吃点好的'
+    - icon: help-icon_79
+      title: '#计算怪物战力xxx'
+      desc: '计算某个怪物的战力，看看自己会不会被薄纱'
+
+- group: 交易所
+  list:
+    - icon: help-icon_14
+      title: '#交易所'
+      desc: '查看交易所别人在卖什么'
+    - icon: help-icon_14
+      title: '#异界上架xxx'
+      desc: '在交易所上架你想出售的东西'
+    - icon: help-icon_79
+      title: '#异界下架xxx'
+      desc: '在交易所下架你当前不想出售的东西'
+    - icon: help-icon_79
+      title: '#异界选购+编号'
+      desc: '购买你想要的东西'
+
+
+- group: 仙鼎
+  list:
+    - icon: help-icon_82
+      title: '#仙鼎等级'
+      desc: '查看最近几级的经验和基础值'
+    - icon: help-icon_82
+      title: '#炼化+仙鼎遗书名'
+      desc: '炼化仙鼎遗书，提升仙鼎等级'
+    - icon: help-icon_82
+      title: '#仙鼎突破'
+      desc: '提升仙鼎等级'
+
+- group: 天赋
+  list:
+    - icon: help-icon_82
+      title: '#天赋等级'
+      desc: '查看最近几级的天赋效果'
+    - icon: help-icon_82
+      title: '#天赋突破'
+      desc: '提升天赋等级'
+
+- group: 商店
+  list:
+    - icon: help-icon_82
+      title: '#琉璃堂'
+      desc: '查看琉璃堂卖些啥'
+    - icon: help-icon_82
+      title: '#琉璃堂+类别'
+      desc: '筛选琉璃堂物品'
+    - icon: help-icon_82
+      title: '#琉璃堂购买'
+      desc: '花费星魂币购买'
+
+- group: 箱子
+  list:
+    - icon: help-icon_82
+      title: '#开启箱子xxx'
+      desc: '打开箱子'
+    - icon: help-icon_82
+      title: '#十连箱子xxx'
+      desc: '一发十连看看实力'
+    - icon: help-icon_82
+      title: '#查询箱子xxx'
+      desc: '查看最近抽了多少，还有多少保底'
+    

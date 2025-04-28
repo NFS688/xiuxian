@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="{{pluResPath}}/html/tianfulevel/tianfulevel.css" />
+  <!-- <link rel="stylesheet" type="text/css" href="../../html/player/player.css" /> -->
+  <link rel="preload" href="../../font/tttgbnumber.ttf" as="font" />
+  <!-- <link rel="preload" href="../../img/player/xiuxian-01.png" as="image" /> -->
+  <link rel="shortcut icon" href="#" />
+</head>
+
+<body>
+  <div>
+
+
+    <div class="user_bottom1">
+      <div class="use_data">
+        <div class="use_data_head">
+          <div class="user_font">#天赋等级</div>
+          <div class="user_font">每次探寻异界秘境，可获得1点天赋经验</div>
+          <div class="user_font">每次异界寻宝，可获得3点天赋经验</div>
+        </div>
+      </div>
+    </div>
+    {{each Level_list item}}
+    <div class="user_bottom1">
+      <div class="use_data">
+        <div class="use_data_head">
+          <div class="user_font">
+            <div> 等级【{{item.level}}】</div>
+            <div> 升级下一级所需经验【{{item.exp}}】</div>
+            {{if item.level > 0}}
+            <div><br /></div>
+            {{if item.tianfu_level >1}}
+            <div> 天赋升级【{{item.name}}*LV{{item.tianfu_level}}】</div>
+            {{else}}
+            <div> 获得天赋【{{item.name}}*LV{{item.tianfu_level}}】</div>
+            {{/if}}
+            <div> 等级效果：{{item.list}}</div>
+            {{/if}}
+          </div>
+        </div>
+      </div>
+    </div>
+    {{/each}}
+
+
+    <!--底部-->
+
+    <div class="user_bottom2">
+    </div>
+
+
+
+
+  </div>
+  <style>
+
+  </style>
+
+</body>
+
+</html>

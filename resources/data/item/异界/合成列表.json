@@ -1,0 +1,182 @@
+[
+    {
+        "name": "木棍",
+        "class": "材料",
+        "type": "材料",
+        "amount": 4,
+        "materials": [
+            {
+                "name": "木块",
+                "class": "材料",
+                "amount": 2
+            }
+        ]
+    },
+    {
+        "name": "精铁矿",
+        "class": "材料",
+        "type": "材料",
+        "amount": 8,
+        "materials": [
+            {
+                "name": "原铁矿",
+                "class": "材料",
+                "amount": 8
+            },
+            {
+                "name": "煤矿",
+                "class": "材料",
+                "amount": 1
+            }
+        ]
+    },
+    {
+        "name": "铁镐",
+        "class": "道具",
+        "type": "道具",
+        "amount": 1,
+        "materials": [
+            {
+                "name": "精铁矿",
+                "class": "材料",
+                "amount": 3
+            },
+            {
+                "name": "木棍",
+                "class": "材料",
+                "amount": 2
+            }
+        ]
+    },
+    {
+        "name": "金矿",
+        "class": "材料",
+        "type": "材料",
+        "amount": 8,
+        "materials": [
+            {
+                "name": "原金矿",
+                "class": "材料",
+                "amount": 8
+            },
+            {
+                "name": "煤矿",
+                "class": "材料",
+                "amount": 1
+            }
+        ]
+    },
+    {
+        "name": "压缩金矿",
+        "class": "材料",
+        "type": "材料",
+        "amount": 1,
+        "materials": [
+            {
+                "name": "金矿",
+                "class": "材料",
+                "amount": 64
+            }
+        ]
+    },
+    {
+        "name": "压缩金剑",
+        "class": "装备",
+        "type": "武器",
+        "amount": 1,
+        "materials": [
+            {
+                "name": "压缩金矿",
+                "class": "材料",
+                "amount": 2
+            },
+            {
+                "name": "木棍",
+                "class": "材料",
+                "amount": 1
+            }
+        ]
+    },
+    {
+        "name": "压缩金盾",
+        "class": "装备",
+        "type": "护具",
+        "amount": 1,
+        "materials": [
+            {
+                "name": "压缩金矿",
+                "class": "材料",
+                "amount": 6
+            },
+            {
+                "name": "木块",
+                "class": "材料",
+                "amount": 3
+            }
+        ]
+    },
+    {
+        "name": "压缩金葫芦",
+        "class": "装备",
+        "type": "法宝",
+        "amount": 1,
+        "materials": [
+            {
+                "name": "压缩金矿",
+                "class": "材料",
+                "amount": 8
+            }
+        ]
+    },
+    {
+        "name": "烤肉",
+        "class": "食材",
+        "type": "食物",
+        "amount": 8,
+        "materials": [
+            {
+                "name": "生肉",
+                "class": "食材",
+                "amount": 8
+            },
+            {
+                "name": "煤矿",
+                "class": "材料",
+                "amount": 1
+            }
+        ]
+    },
+    {
+        "name": "龙皇之剑",
+        "class": "装备",
+        "type": "武器",
+        "amount": 1,
+        "materials": [
+            {
+                "name": "碧玉仙心杯",
+                "class": "材料",
+                "amount": 5
+            },
+            {
+                "name": "幻云流光帕",
+                "class": "材料",
+                "amount": 5
+            },
+            {
+                "name": "金莲润心露",
+                "class": "材料",
+                "amount": 5
+            },
+            {
+                "name": "紫霄凝息丹",
+                "class": "材料",
+                "amount": 5
+            },
+            {
+                "name": "琉璃明魂镜",
+                "class": "材料",
+                "amount": 5
+            }
+        ]
+    }
+]
