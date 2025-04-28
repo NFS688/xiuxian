@@ -1,3 +1,5 @@
 Database: #mysql数据库配置
+  host: 'localhost' #数据库地址,默认localhost
   username: 'root' #数据库用户名,一般是root
+  port: 3306 #数据库端口,默认3306
   password: #数据库密码

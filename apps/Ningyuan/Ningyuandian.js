@@ -12,7 +12,8 @@ import mysql from "mysql"
 let databaseConfigData = config.getConfig("database", "database");
 //创建连接
 const db = mysql.createPool({
-    host: 'localhost',
+    host: databaseConfigData.Database.host,
+    port: databaseConfigData.Database.port,
     user: databaseConfigData.Database.username,
     password: databaseConfigData.Database.password,
     database: 'xiuxiandatabase'

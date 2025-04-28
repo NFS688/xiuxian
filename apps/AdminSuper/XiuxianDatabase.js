@@ -39,7 +39,8 @@ export class XiuxianDatabase extends plugin {
         var mysql = require('mysql');
         //创建连接
         const db = mysql.createPool({
-            host: 'localhost',
+            host: this.databaseConfigData.Database.host,
+            port: this.databaseConfigData.Database.port,
             user: this.databaseConfigData.Database.username,
             password: this.databaseConfigData.Database.password
         })
