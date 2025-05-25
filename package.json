@@ -1,0 +1,15 @@
+{
+  "name": "xiuxian-emulator-plugin",
+  "version": "1.0.0",
+  "description": "修仙模拟器插件",
+  "main": "index.js",
+  "type": "module",
+  "author": "NFS660",
+  "license": "MIT",
+  "scripts": {
+    "postinstall": "cd ../.. && pnpm install mysql --workspace-root"
+  },
+  "dependencies": {
+    "mysql": "^2.18.1"
+  }
+}
