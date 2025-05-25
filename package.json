@@ -6,9 +6,6 @@
   "type": "module",
   "author": "NFS660",
   "license": "MIT",
-  "scripts": {
-    "postinstall": "cd ../.. && pnpm install mysql --workspace-root"
-  },
   "dependencies": {
     "mysql": "^2.18.1"
   }
