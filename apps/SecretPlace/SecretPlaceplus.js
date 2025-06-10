@@ -152,10 +152,10 @@ export class SecretPlaceplus extends plugin {
 
 
         now_level_id = data.Level_list.find(item => item.level_id == player.level_id).level_id;
-        if (didian == "小千世界" || didian == "中千世界" || didian == "大千世界") {
-            e.reply("打工本不支持沉迷哦");
-            return;
-        }
+        //if (didian == "小千世界" || didian == "中千世界" || didian == "大千世界") {
+        //    e.reply("打工本不支持沉迷哦");
+        //    return;
+        //}
         let rate = player.occupation_level
 
         if (player.occupation == "采药师" && rate < 15 && didian == "须弥") {
@@ -434,10 +434,10 @@ export class SecretPlaceplus extends plugin {
         }
         let now_level_id;
 
-        if (didian == "仙界矿场") {
-            e.reply("打工本不支持沉迷哦");
-            return;
-        }
+        //if (didian == "仙界矿场") {
+        //    e.reply("打工本不支持沉迷哦");
+        //    return;
+        //}
         player = await Read_player(usr_qq);
         now_level_id = data.Level_list.find(item => item.level_id == player.level_id).level_id;
         if (now_level_id < 42) {
