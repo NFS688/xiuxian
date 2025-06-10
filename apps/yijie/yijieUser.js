@@ -931,7 +931,7 @@ export class yijieUser extends plugin {
     async dagong_jiesuan(user_id, time, is_random, group_id) {
 
 
-        let usr_qq = e.user_id.toString().replace('qg_', '')
+        let usr_qq = user_id.toString().replace('qg_', '')
         usr_qq = await Gulid(usr_qq);
         let player = data.getData("yijie_player", usr_qq);
         if (!isNotNull(player.xianding_level)) {
@@ -945,7 +945,7 @@ export class yijieUser extends plugin {
             num2 = 15
         }
         let Time = time * 2;//分钟
-        let msg = [segment.at(e.user_id)];
+        let msg = [segment.at(user_id)];
         let other_xinghunbi = 0;
         let rand = Math.random();
         if (rand < 0.2 && num1 > 0 && num2 > 0) {
