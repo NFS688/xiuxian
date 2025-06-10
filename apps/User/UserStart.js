@@ -491,11 +491,21 @@ export class UserStart extends plugin {
             }
             data.setData('player', usr_qq, player);
             await player_efficiency(usr_qq); // 注意这里刷新了修炼效率提升
+
+            // 如果隐藏灵根，需要重新计算修炼效率（排除灵根加成）
             if ((await player.linggenshow) != 0) {
+                // 保存原始的修炼效率提升
+                let original_efficiency = player.修炼效率提升;
+                // 获取灵根效率加成
+                let linggen_efficiency = player.灵根.eff || 0;
+
+                // 隐藏灵根信息
                 player.灵根.type = '无';
                 player.灵根.name = '未知';
                 player.灵根.法球倍率 = '0';
-                player.修炼效率提升 = '0';
+
+                // 修炼效率提升 = 原始效率 - 灵根效率（保留功法、宗门、仙宠等其他加成）
+                player.修炼效率提升 = original_efficiency - linggen_efficiency;
             }
             if (!isNotNull(player.level_id)) {
                 e.reply('请先#一键同步');
