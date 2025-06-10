@@ -48,7 +48,7 @@ export class AuctionofficialTask extends plugin {
         const nowTime = nowDate.getTime();
         const closeTime = todayTime + closeHour * 60 * 60 * 1000;
         const day1 = nowDate.getDay();
-        if (nowTime < openTime || nowTime > closeTime || day1 != 6) return;
+        if (nowTime < openTime || nowTime > closeTime) return;
 
         // 在开启时间且未开启拍卖则开启拍卖
         const auction = await openAU();
@@ -64,10 +64,12 @@ export class AuctionofficialTask extends plugin {
       }
 
       // 如果已在拍卖中
+      let wupin;
       try {
-        const wupin = JSON.parse(wupinStr);
+        wupin = JSON.parse(wupinStr);
       } catch (error) {
         console.log(error);
+        return;
       }
 
       let msg = '';
