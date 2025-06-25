@@ -511,7 +511,7 @@ export class SecretPlace extends plugin {
             if (e.isGroup) {
                 group_id = e.group_id
             }
-            await Add_修为(usr_qq, -100000);
+            // await Add_修为(usr_qq, -100000);
             let sql3 = `insert into action values(${usr_qq},'镇守仙境',${new Date().getTime() + action_time},${action_time},${group_id},0,0,0,0,0,0,0,0,0,1,0,'${didian}') `
             db.query(sql3, (err) => {
                 e.reply("开始镇守" + didian + "," + time + "分钟后归来!");
