@@ -107,6 +107,9 @@ export class SecretPlaceplusTask extends plugin {
           if (action.action == "沉迷仙境") {
             weizhi = await data.Fairyrealm_list.find(item => item.name == action.Place_address);
           }
+          if (action.action == "沉迷遗迹") {
+            weizhi = await data.yiji_list.find(item => item.name == action.Place_address);
+          }
           if (player.灵根 == null || player.灵根 == undefined) {
             player.灵根 = await get_random_talent();
             player.修炼效率提升 += player.灵根.eff;
