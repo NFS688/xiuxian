@@ -1351,7 +1351,7 @@ export class UserHome extends plugin {
                     await Add_najie_thing(usr_qq, this_danyao.name, '丹药', quantity)
                     return;
                 } else {
-                    if (ac1.biguan > 0) {
+                    if (ac1 && ac1.biguan > 0) {
                         ac1.biguan += this_danyao.机缘 * quantity
                     }
                     if (ac3.lianti > 0) {
