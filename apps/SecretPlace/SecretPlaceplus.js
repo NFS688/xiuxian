@@ -524,12 +524,12 @@ export class SecretPlaceplus extends plugin {
             return;
         }
         let player = await Read_player(usr_qq);
-        if (player.灵石 < weizhi.Price * i) {
+        if (player.灵石 < weizhi.Price * 10 * i) {
             e.reply("没有灵石寸步难行,攒到" + weizhi.Price * i + "灵石才够哦~");
             return true;
         }
         // 可根据需要添加消耗道具、修为等逻辑
-        let Price = weizhi.Price * i;
+        let Price = weizhi.Price * 10 * i;
         const time = i * 10 * 5 + 10;//时间（分钟）
         // 查询人物动作
         let sql1 = `select * from action where usr_id=${usr_qq};`

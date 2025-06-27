@@ -86,6 +86,7 @@ export class SecretPlaceplusTask extends plugin {
         let player = await Read_player(action.usr_id);
         //最后发送的消息
         let msg = [];
+        let monster; // 提前声明
         end_time = end_time - action.time;
         //时间过了
         if (now_time > end_time) {
@@ -144,7 +145,7 @@ export class SecretPlaceplusTask extends plugin {
           };
           let monster_length = data.monster_list.length;
           let monster_index = Math.trunc(Math.random() * monster_length);
-          let monster = data.monster_list[monster_index];
+          monster = data.monster_list[monster_index];
           if (
             weizhi.name == '三清山' ||
             weizhi.name == '张家界' ||

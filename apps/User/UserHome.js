@@ -1354,13 +1354,13 @@ export class UserHome extends plugin {
                     if (ac1 && ac1.biguan > 0) {
                         ac1.biguan += this_danyao.机缘 * quantity
                     }
-                    if (ac3.lianti > 0) {
+                    if (ac3 && ac3.lianti > 0) {
                         ac3.lianti += this_danyao.机缘 * quantity
                     }
-                    if (ac2.ped > 0) {
+                    if (ac2 && ac2.ped > 0) {
                         ac2.ped += this_danyao.机缘 * quantity
                     }
-                    if (ac4.quantity > 0) {
+                    if (ac4 && ac4.quantity > 0) {
                         ac4.quantity += this_danyao.机缘 * quantity
                     }
                     e.reply(`丹韵入体,身体内蕴含的仙丹药效增加了${this_danyao.机缘 * quantity}次`)
