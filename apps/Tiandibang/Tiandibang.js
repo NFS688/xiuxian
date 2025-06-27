@@ -527,14 +527,11 @@ export class Tiandibang extends plugin {
                     e.reply(img);
                     e.reply(last_msg);
                 }
-                // 在战斗结束且成功后才消耗摘榜令
-                if (msg.find(item => item == A_win) || msg.find(item => item == B_win)) {
-                    if (tiandibang[x].willUseZhaibangling) {
-                        await Add_najie_thing(usr_qq, "摘榜令", "道具", -1);
-                        tiandibang[x].cishu = 1;
-                        last_msg.push(`${tiandibang[x].名号}使用了摘榜令\n`);
-                    }
-                    // 继续处理战斗结果...
+                // 在战斗结束后（无论胜负）都消耗摘榜令
+                if (tiandibang[x].willUseZhaibangling) {
+                    await Add_najie_thing(usr_qq, "摘榜令", "道具", -1);
+                    tiandibang[x].cishu = 1;
+                    last_msg.push(`${tiandibang[x].名号}使用了摘榜令\n`);
                 }
                 return;
             })
