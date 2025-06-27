@@ -1333,7 +1333,7 @@ export class UserHome extends plugin {
             if (this_danyao.type == "凝仙") {
                 let ac = await redis.get("xiuxian:player:" + usr_qq + ":xianyuan");
                 //闭关
-                let ac1 = await redis.get("xiuxian:player:" + usr_qq + ":biguan");
+                let ac1 = await redis.get("xiuxian:player:" + usr_qq + ":biguang");
                 ac1 = JSON.parse(ac1);
                 //仙缘
                 let ac2 = await redis.get("xiuxian:player:" + usr_qq + ":xianyuan");
