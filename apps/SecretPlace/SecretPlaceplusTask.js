@@ -109,6 +109,17 @@ export class SecretPlaceplusTask extends plugin {
           }
           if (action.action == "沉迷遗迹") {
             weizhi = await data.yiji_list.find(item => item.name == action.Place_address);
+            // 沉迷遗迹专属怪物池
+            let activityMonsters = data.monster_list_huodong;
+            if (Array.isArray(activityMonsters) && activityMonsters.length > 0) {
+              let monster_index = Math.trunc(Math.random() * activityMonsters.length);
+              monster = activityMonsters[monster_index];
+            } else {
+              // 兜底：如果活动怪物池没配置，仍用默认怪物池
+              let monster_length = data.monster_list.length;
+              let monster_index = Math.trunc(Math.random() * monster_length);
+              monster = data.monster_list[monster_index];
+            }
           }
           if (player.灵根 == null || player.灵根 == undefined) {
             player.灵根 = await get_random_talent();
