@@ -344,9 +344,17 @@ export class Tiandibang extends plugin {
                 }
                 let lingshi;
                 if (x != 0) {
-                    let k = Math.ceil(Math.random() * tiandibang.length);
-                    if (k == 0 || tiandibang[x].名号 == tiandibang[k].名号) {
-                        k = -1
+                    // 修复随机下标越界
+                    let k = Math.floor(Math.random() * tiandibang.length);
+                    // 增加有效性判断，防止 undefined 报错
+                    if (
+                        k === x ||
+                        !tiandibang[k] ||
+                        !tiandibang[x] ||
+                        typeof tiandibang[k].名号 === 'undefined' ||
+                        typeof tiandibang[x].名号 === 'undefined'
+                    ) {
+                        k = -1;
                     }
                     let B_player;
                     if (k != -1) {
