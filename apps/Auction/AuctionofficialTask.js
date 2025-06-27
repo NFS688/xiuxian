@@ -59,7 +59,10 @@ export class AuctionofficialTask extends plugin {
           const player = await Read_player(auction.last_offer_player);
           msg += `最高出价是${player.名号}叫出的${auction.last_price}`;
         }
-        auction.groupList.forEach(group_id => this.pushInfo(group_id, true, msg));
+        // 只推送一次，避免重复
+        for (const group_id of auction.groupList) {
+          this.pushInfo(group_id, true, msg);
+        }
         return;
       }
 

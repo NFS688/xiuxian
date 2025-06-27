@@ -460,6 +460,11 @@ export class Tiandibang extends plugin {
                         ...data1,
                     });
                     e.reply(img);
+                    if (tiandibang[x].willUseZhaibangling) {
+                        await Add_najie_thing(usr_qq, "摘榜令", "道具", -1);
+                        tiandibang[x].cishu = 1;
+                        last_msg.push(`${tiandibang[x].名号}使用了摘榜令\n`);
+                    }
                     e.reply(last_msg);
                 }
                 else {
@@ -525,13 +530,11 @@ export class Tiandibang extends plugin {
                         ...data1,
                     });
                     e.reply(img);
-                    e.reply(last_msg);
-                }
-                // 在战斗结束后（无论胜负）都消耗摘榜令
-                if (tiandibang[x].willUseZhaibangling) {
-                    await Add_najie_thing(usr_qq, "摘榜令", "道具", -1);
-                    tiandibang[x].cishu = 1;
-                    last_msg.push(`${tiandibang[x].名号}使用了摘榜令\n`);
+                    if (tiandibang[x].willUseZhaibangling) {
+                        await Add_najie_thing(usr_qq, "摘榜令", "道具", -1);
+                        tiandibang[x].cishu = 1;
+                        last_msg.push(`${tiandibang[x].名号}使用了摘榜令\n`);
+                    }
                     e.reply(last_msg);
                 }
                 return;
