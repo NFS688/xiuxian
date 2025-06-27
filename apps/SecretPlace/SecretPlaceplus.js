@@ -156,9 +156,9 @@ export class SecretPlaceplus extends plugin {
         //    e.reply("打工本不支持沉迷哦");
         //    return;
         //}
-        let rate = player.occupation_level
+        // let rate = player.occupation_level
 
-        if (player.occupation == "采药师" && rate < 15 && didian == "须弥") {
+        if (player.occupation == "采药师" && didian == "须弥") {
             e.reply("冒险等级不足")
             return
         }
