@@ -204,8 +204,8 @@ export class SecretPlace extends plugin {
         let now_level_id;
 
         now_level_id = data.Level_list.find(item => item.level_id == player.level_id).level_id;
-        let rate = player.occupation_level
-        if (player.occupation == "采药师" && rate < 15 && didian == "须弥") {
+        // let rate = player.occupation_level
+        if (player.occupation == "采药师" && didian == "须弥") {
             e.reply("冒险等级不足(职业等级不足)")
             return
         }
