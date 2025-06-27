@@ -333,15 +333,14 @@ export class Tiandibang extends plugin {
                 }
                 if (Today.Y == lastbisai_time.Y && Today.M == lastbisai_time.M && Today.D == lastbisai_time.D && tiandibang[x].cishu < 1) {
                     let zbl = await exist_najie_thing(usr_qq, "摘榜令", "道具");
-                    if (zbl) {
-                        tiandibang[x].cishu = 1;
-                        await Add_najie_thing(usr_qq, "摘榜令", "道具", -1);
-                        last_msg.push(`${tiandibang[x].名号}使用了摘榜令\n`);
-                    }
-                    else {
+                    if (!zbl) {
                         e.reply("今日挑战次数用光了,请明日再来吧");
                         return;
                     }
+                    // 先不消耗摘榜令，记录使用意图
+                    tiandibang[x].willUseZhaibangling = true;
+                } else {
+                    tiandibang[x].willUseZhaibangling = false;
                 }
                 let lingshi;
                 if (x != 0) {
@@ -519,6 +518,15 @@ export class Tiandibang extends plugin {
                     });
                     e.reply(img);
                     e.reply(last_msg);
+                }
+                // 在战斗结束且成功后才消耗摘榜令
+                if (msg.find(item => item == A_win) || msg.find(item => item == B_win)) {
+                    if (tiandibang[x].willUseZhaibangling) {
+                        await Add_najie_thing(usr_qq, "摘榜令", "道具", -1);
+                        tiandibang[x].cishu = 1;
+                        last_msg.push(`${tiandibang[x].名号}使用了摘榜令\n`);
+                    }
+                    // 继续处理战斗结果...
                 }
                 return;
             })
