@@ -60,6 +60,10 @@ export class SecretPlaceplus extends plugin {
                 {
                     reg: '^#沉迷仙境.*$',
                     fnc: 'Gofairyrealm'
+                },
+                {
+                    reg: '^#沉迷遗迹.*$',
+                    fnc: 'GoYijiPlace'
                 }
             ]
         })
@@ -489,6 +493,76 @@ export class SecretPlaceplus extends plugin {
             let sql3 = `insert into action values(${usr_qq},'沉迷仙境',${new Date().getTime()},${new Date().getTime() + action_time},${group_id},0,0,0,0,0,0,0,0,0,0,${i * 10},'${didian}') `
             db.query(sql3, (err) => {
                 e.reply("开始沉迷仙境" + didian + "," + time + "分钟后归来!");
+            })
+            return;
+        })
+    }
+
+    // 沉迷遗迹
+    async GoYijiPlace(e) {
+        if (!e.isGroup) {
+            return;
+        }
+        let usr_qq = e.user_id;
+        let didian = e.msg.replace("#沉迷遗迹", '');
+        let code = didian.split("*");
+        didian = code[0].trim();
+        let i = code[1];
+        if (i < 1 || i == null || i == undefined || i == NaN) {
+            i = 1;
+        } else {
+            i = code[1].replace(/[^0-9]/ig, "");
+        }
+        if (i < 1 || i == null || i == undefined || i == NaN) {
+            i = 1;
+        }
+        if (i > 12) {
+            return;
+        }
+        let weizhi = await data.yiji_list.find(item => item.name == didian);
+        if (!weizhi) {
+            return;
+        }
+        let player = await Read_player(usr_qq);
+        if (player.灵石 < weizhi.Price * i) {
+            e.reply("没有灵石寸步难行,攒到" + weizhi.Price * i + "灵石才够哦~");
+            return true;
+        }
+        // 可根据需要添加消耗道具、修为等逻辑
+        let Price = weizhi.Price * i;
+        const time = i * 10 * 5 + 10;//时间（分钟）
+        // 查询人物动作
+        let sql1 = `select * from action where usr_id=${usr_qq};`
+        db.query(sql1, async (err, result) => {
+            let action = JSON.stringify(result)
+            if (action != undefined && action != "undefined" && action.length > 2) {
+                action = JSON.parse(action)
+                action = action[0]
+                let now_time = new Date().getTime();
+                let timee = 0
+                if (action.action_chengmi != 0) {
+                    timee = action.time - now_time
+                } else {
+                    timee = action.end_time - now_time
+                }
+                let m = parseInt(timee / 1000 / 60);
+                let s = parseInt((timee - m * 60 * 1000) / 1000);
+                if (m <= 0 && s <= 0) {
+                    e.reply(action.action + "结算中...");
+                } else {
+                    e.reply("正在" + action.action + "中，剩余时间:" + m + "分" + s + "秒");
+                }
+                return;
+            }
+            await Add_灵石(usr_qq, -Price);
+            let action_time = 60000 * time;//持续时间，单位毫秒
+            let group_id = 0
+            if (e.isGroup) {
+                group_id = e.group_id
+            }
+            let sql3 = `insert into action values(${usr_qq},'沉迷遗迹',${new Date().getTime()},${new Date().getTime() + action_time},${group_id},0,0,0,0,0,0,0,0,0,0,${i * 10},'${didian}') `
+            db.query(sql3, (err) => {
+                e.reply("开始沉迷遗迹" + didian + "," + time + "分钟后归来!");
             })
             return;
         })
