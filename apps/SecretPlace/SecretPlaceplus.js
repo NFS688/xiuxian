@@ -525,13 +525,20 @@ export class SecretPlaceplus extends plugin {
         }
         let player = await Read_player(usr_qq);
         if (player.灵石 < weizhi.Price * 10 * i) {
-            e.reply("没有灵石寸步难行,攒到" + weizhi.Price * i + "灵石才够哦~");
-            return true;
+            e.reply("没有灵石寸步难行,攒到" + weizhi.Price * 10 * i + "灵石才够哦~");
+            return;
         }
-        // 可根据需要添加消耗道具、修为等逻辑
+        let number = await exist_najie_thing(usr_qq, "秘境之匙", "道具")
+        if (isNotNull(number) && number >= i) {
+            await Add_najie_thing(usr_qq, "秘境之匙", "道具", -i);
+        } else {
+            e.reply("你没有足够数量的秘境之匙");
+            return;
+        }
+        
         let Price = weizhi.Price * 10 * i;
         const time = i * 10 * 5 + 10;//时间（分钟）
-        // 查询人物动作
+
         let sql1 = `select * from action where usr_id=${usr_qq};`
         db.query(sql1, async (err, result) => {
             let action = JSON.stringify(result)
@@ -554,7 +561,9 @@ export class SecretPlaceplus extends plugin {
                 }
                 return;
             }
+
             await Add_灵石(usr_qq, -Price);
+            await Add_修为(usr_qq, -100000 * 10 * i);
             let action_time = 60000 * time;//持续时间，单位毫秒
             let group_id = 0
             if (e.isGroup) {
